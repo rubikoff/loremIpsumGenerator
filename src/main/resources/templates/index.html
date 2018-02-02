@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<!--
+	Aerial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Lorem Ipsum</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script th:src="@{assets/js/ie/html5shiv.js}"></script><![endif]-->
+		<link rel="stylesheet" th:href="@{assets/css/main.css}" />
+		<!--[if lte IE 8]><link rel="stylesheet" th:href="@{assets/css/ie8.css}" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" th:href="@{assets/css/ie9.css}" /><![endif]-->
+	</head>
+	<body class="loading">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Generator Lorem Ipsum</h1>
+						<br/>
+
+						<form th:method="post" th:action="@{/}">
+
+							<label><input type="radio" name="lorem" value="lorem" checked="checked"/>Zacznij 'Lorem ipsum dolor sit amet...'</label>
+							<label><input type="radio" name="lorem" value="x" />Zacznij BEZ 'Lorem ipsum dolor sit amet...'</label><br/>
+							<label><input type="radio" name="radio" value="akapit" checked="checked"/>akapity</label>
+							<label><input type="radio" name="radio" value="słowa"/>słowa</label><br/>
+							<input type="number" name="number" min="0" id="nuber" required />
+
+							<input type="submit" value="Generuj" />
+							<br/>
+							<br/>
+							<textarea th:text="${message}" cols="170" rows="10"></textarea>
+
+						</form>
+					</header>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<span class="copyright">&copy; Untitled. Edited by Piotrek</span>
+					</footer>
+
+			</div>
+		</div>
+		<!--[if lte IE 8]><script th:src="@{assets/js/ie/respond.min.js}"></script><![endif]-->
+		<script>
+			window.onload = function() { document.body.className = ''; }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
+	</body>
+</html>
